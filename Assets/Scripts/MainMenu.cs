@@ -4,16 +4,27 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string nombreEscenaJuego = "Game";
+    [SerializeField] private GameObject panelOpciones;
+
+    private void Start()
+    {
+        // El panel empieza oculto
+        panelOpciones.SetActive(false);
+    }
 
     public void Jugar()
     {
         SceneManager.LoadScene(nombreEscenaJuego);
     }
 
-    public void Opciones()
+    public void AbrirOpciones()
     {
-        // De momento no hace nada
-        Debug.Log("Opciones: aún sin implementar");
+        panelOpciones.SetActive(true);
+    }
+
+    public void CerrarOpciones()
+    {
+        panelOpciones.SetActive(false);
     }
 
     public void Salir()
